@@ -1,0 +1,178 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+:root{
+  --bg:#0f0e0c;
+  --fg:#f0ebe3;
+  --dim:#4a443c;
+  --muted:#8a7f72;
+  --accent:#c47c3a;
+  --accent2:#5a8a5e;
+  --accent3:#7a6aaa;
+  --rule:1px solid #2a2520;
+}
+@media(prefers-color-scheme:light){
+  :root{
+    --bg:#faf7f2;
+    --fg:#1a1612;
+    --dim:#c5bdb2;
+    --muted:#8a7f72;
+    --accent:#b36a28;
+    --accent2:#3d6b41;
+    --accent3:#5c4d96;
+    --rule:1px solid #e0d8ce;
+  }
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:'JetBrains Mono',monospace;font-size:13px;line-height:1.7;max-width:660px;margin:0 auto;padding:40px 28px 80px}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+
+.topbar{color:var(--dim);border-bottom:var(--rule);padding-bottom:14px;margin-bottom:32px;display:flex;justify-content:space-between}
+.topbar .site{color:var(--accent);font-weight:700}
+
+.section{margin-bottom:48px}
+.section-head{color:var(--dim);margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.section-head::after{content:'';flex:1;height:1px;background:var(--dim);opacity:0.3}
+
+.coffee{display:grid;grid-template-columns:28px 1fr;gap:0 14px;padding:14px 0;border-bottom:var(--rule)}
+.coffee:last-child{border-bottom:none}
+.num{color:var(--dim);padding-top:1px}
+.name{color:var(--fg);font-weight:700}
+.meta{color:var(--muted);margin-top:1px}
+.notes{color:var(--muted);margin-top:4px;font-style:italic}
+.tags{margin-top:6px;display:flex;gap:8px;flex-wrap:wrap}
+.tag{font-size:11px;padding:1px 7px;border-radius:2px}
+.tag-fave{background:transparent;color:var(--accent);border:1px solid var(--accent)}
+.tag-process{background:transparent;color:var(--accent2);border:1px solid var(--accent2)}
+.tag-warn{background:transparent;color:var(--accent3);border:1px solid var(--accent3)}
+.price{color:var(--accent);margin-top:4px}
+
+.post{display:grid;grid-template-columns:80px 1fr;gap:0 14px;padding:12px 0;border-bottom:var(--rule)}
+.post:last-child{border-bottom:none}
+.post-date{color:var(--dim)}
+.post-title{color:var(--fg)}
+.post-title a{color:var(--fg)}
+.post-title a:hover{color:var(--accent)}
+.post-blurb{color:var(--muted);font-style:italic;margin-top:3px;font-size:12px}
+
+.cta-box{border:1px solid var(--dim);padding:24px;margin-top:0}
+.cta-head{color:var(--fg);font-weight:700;font-size:15px;margin-bottom:8px}
+.cta-body{color:var(--muted);font-style:italic;margin-bottom:14px;font-size:12px}
+.cta-email{color:var(--accent);font-size:14px;font-weight:700}
+.cta-hint{color:var(--dim);margin-top:6px;font-size:12px}
+
+.footer{margin-top:56px;color:var(--dim);font-size:11px;display:flex;justify-content:space-between;border-top:var(--rule);padding-top:14px}
+</style>
+
+</head><body><div>
+
+<div class="topbar">
+  <span><span class="site">gnarli</span> — small batch coffee</span>
+  <span>direct trade / email to order</span>
+</div>
+
+<div class="section">
+  <div class="section-head"><span style="color:var(--accent)">##</span> coffees</div>
+
+  <div class="coffee">
+    <div class="num">01</div>
+    <div>
+      <div class="name">Yirgacheffe Natural</div>
+      <div class="meta">Ethiopia — Gedeo Zone</div>
+      <div class="notes">natural process. blueberry, dark chocolate, fig. fruit-forward and boozy finish.</div>
+      <div class="tags">
+        <span class="tag tag-fave">current favourite</span>
+        <span class="tag tag-process">natural</span>
+      </div>
+      <div class="price">$22 / 250g</div>
+    </div>
+  </div>
+
+  <div class="coffee">
+    <div class="num">02</div>
+    <div>
+      <div class="name">Huila Washed</div>
+      <div class="meta">Colombia — Huila Dept.</div>
+      <div class="notes">washed. caramel, green apple, bright citrus. your everyday drinker.</div>
+      <div class="tags">
+        <span class="tag tag-process">washed</span>
+      </div>
+      <div class="price">$19 / 250g</div>
+    </div>
+  </div>
+
+  <div class="coffee">
+    <div class="num">03</div>
+    <div>
+      <div class="name">Sumatra Mandheling</div>
+      <div class="meta">Indonesia — West Sumatra</div>
+      <div class="notes">wet hulled. dark roast. cedar, earth, molasses, black pepper. not for everyone.</div>
+      <div class="tags">
+        <span class="tag tag-process">wet hulled</span>
+        <span class="tag tag-process">dark roast</span>
+      </div>
+      <div class="price">$20 / 250g</div>
+    </div>
+  </div>
+
+  <div class="coffee">
+    <div class="num">04</div>
+    <div>
+      <div class="name">Kenya AB Kirinyaga</div>
+      <div class="meta">Kenya — Kirinyaga County</div>
+      <div class="notes">double washed. blackcurrant, tomato, grapefruit. weird in the best way.</div>
+      <div class="tags">
+        <span class="tag tag-warn">almost gone</span>
+        <span class="tag tag-process">double washed</span>
+      </div>
+      <div class="price">$24 / 250g</div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-head"><span style="color:var(--accent)">##</span> blog</div>
+
+  <div class="post">
+    <div class="post-date">2025-03</div>
+    <div>
+      <div class="post-title"><a href="#">Why I stopped chasing light roasts</a></div>
+      <div class="post-blurb">Spent two years obsessing over 195°F. Turns out I just wanted a good cup.</div>
+    </div>
+  </div>
+
+  <div class="post">
+    <div class="post-date">2025-01</div>
+    <div>
+      <div class="post-title"><a href="#">The grinder is the most important thing you own</a></div>
+      <div class="post-blurb">Not the machine. Not the kettle. The grinder.</div>
+    </div>
+  </div>
+
+  <div class="post">
+    <div class="post-date">2024-11</div>
+    <div>
+      <div class="post-title"><a href="#">On buying direct from farmers</a></div>
+      <div class="post-blurb">How we source, what we pay, why the supply chain is still broken.</div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-head"><span style="color:var(--accent)">##</span> order</div>
+  <div class="cta-box">
+    <div class="cta-head">want a bag?</div>
+    <div class="cta-body">no cart. no checkout. no subscription trap.</div>
+    <div class="cta-email"><a href="mailto:hello@gnarli.coffee">hello@gnarli.coffee</a></div>
+    <div class="cta-hint">// coffee name + quantity + address. that's it.</div>
+  </div>
+</div>
+
+<div class="footer">
+  <span>© 2025 gnarli</span>
+  <span>montréal-ish</span>
+</div>
+
+</div>
+</body></html>
