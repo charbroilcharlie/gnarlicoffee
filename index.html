@@ -1,7 +1,39 @@
-<html><head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8"><style>
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>gnarli — small batch coffee</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
 :root{
+  --bg:#faf7f2;
+  --fg:#1a1612;
+  --dim:#c5bdb2;
+  --muted:#8a7f72;
+  --accent:#b36a28;
+  --accent2:#3d6b41;
+  --accent3:#5c4d96;
+  --rule:1px solid #e0d8ce;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f0e0c;
+    --fg:#f0ebe3;
+    --dim:#4a443c;
+    --muted:#8a7f72;
+    --accent:#c47c3a;
+    --accent2:#5a8a5e;
+    --accent3:#7a6aaa;
+    --rule:1px solid #2a2520;
+  }
+}
+:root[data-theme="dark"]{
   --bg:#0f0e0c;
   --fg:#f0ebe3;
   --dim:#4a443c;
@@ -11,24 +43,34 @@
   --accent3:#7a6aaa;
   --rule:1px solid #2a2520;
 }
-@media(prefers-color-scheme:light){
-  :root{
-    --bg:#faf7f2;
-    --fg:#1a1612;
-    --dim:#c5bdb2;
-    --muted:#8a7f72;
-    --accent:#b36a28;
-    --accent2:#3d6b41;
-    --accent3:#5c4d96;
-    --rule:1px solid #e0d8ce;
-  }
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:border-box}
+*{margin:0;padding:0}
+body{
+  background:var(--bg);
+  color:var(--fg);
+  font-family:'JetBrains Mono','Courier New',monospace;
+  font-size:13px;
+  line-height:1.7;
+  max-width:660px;
+  width:100%;
+  margin:0 auto;
+  padding:40px 28px 80px;
+  overflow-wrap:break-word;
 }
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--bg);color:var(--fg);font-family:'JetBrains Mono',monospace;font-size:13px;line-height:1.7;max-width:660px;margin:0 auto;padding:40px 28px 80px}
 a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline}
 
-.topbar{color:var(--dim);border-bottom:var(--rule);padding-bottom:14px;margin-bottom:32px;display:flex;justify-content:space-between}
+.topbar{
+  color:var(--dim);
+  border-bottom:var(--rule);
+  padding-bottom:14px;
+  margin-bottom:32px;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  gap:6px 16px;
+}
 .topbar .site{color:var(--accent);font-weight:700}
 
 .section{margin-bottom:48px}
@@ -42,7 +84,7 @@ a:hover{text-decoration:underline}
 .meta{color:var(--muted);margin-top:1px}
 .notes{color:var(--muted);margin-top:4px;font-style:italic}
 .tags{margin-top:6px;display:flex;gap:8px;flex-wrap:wrap}
-.tag{font-size:11px;padding:1px 7px;border-radius:2px}
+.tag{font-size:11px;padding:1px 7px;border-radius:2px;display:inline-block}
 .tag-fave{background:transparent;color:var(--accent);border:1px solid var(--accent)}
 .tag-process{background:transparent;color:var(--accent2);border:1px solid var(--accent2)}
 .tag-warn{background:transparent;color:var(--accent3);border:1px solid var(--accent3)}
@@ -59,10 +101,33 @@ a:hover{text-decoration:underline}
 .cta-box{border:1px solid var(--dim);padding:24px;margin-top:0}
 .cta-head{color:var(--fg);font-weight:700;font-size:15px;margin-bottom:8px}
 .cta-body{color:var(--muted);font-style:italic;margin-bottom:14px;font-size:12px}
-.cta-email{color:var(--accent);font-size:14px;font-weight:700}
+.cta-email{color:var(--accent);font-size:14px;font-weight:700;word-break:break-all}
 .cta-hint{color:var(--dim);margin-top:6px;font-size:12px}
 
-.footer{margin-top:56px;color:var(--dim);font-size:11px;display:flex;justify-content:space-between;border-top:var(--rule);padding-top:14px}
+.footer{
+  margin-top:56px;
+  color:var(--dim);
+  font-size:11px;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  gap:4px 16px;
+  border-top:var(--rule);
+  padding-top:14px;
+}
+
+@media (max-width:480px){
+  body{
+    font-size:12.5px;
+    padding:28px 18px 56px;
+  }
+  .topbar{flex-direction:column;gap:4px;margin-bottom:24px}
+  .section{margin-bottom:36px}
+  .post{grid-template-columns:60px 1fr}
+  .coffee{grid-template-columns:22px 1fr;gap:0 10px}
+  .cta-box{padding:18px}
+  .footer{flex-direction:column;gap:4px;margin-top:40px}
+}
 </style>
 
 </head><body><div>
@@ -114,7 +179,7 @@ a:hover{text-decoration:underline}
         <span class="tag tag-process">Light or Medium Roast Available</span>
         <span class="tag tag-warn">almost gone!</span>
       </div>
-      <div class="price">$20 / 3400g</div>
+      <div class="price">$20 / 340g</div>
     </div>
   </div>
 
@@ -124,8 +189,8 @@ a:hover{text-decoration:underline}
       <div class="name">Late Nights</div>
       <div class="meta">Columbia - Decaf</div>
       <div class="notes">Incredibly balanced cup, notes of red fruits, but also cozy. Think of a cherry wrapped in a blanket next to the fire.</div>
-      <div class="tags">  
-        <span class="tag tag-roast">Light or Medium Roast Available/span>
+      <div class="tags">
+        <span class="tag tag-process">Light or Medium Roast Available</span>
       </div>
       <div class="price">$20 / 340g</div>
     </div>
@@ -141,6 +206,7 @@ a:hover{text-decoration:underline}
     <div class="cta-hint">// coffee name + quantity + address. that's it.</div>
   </div>
 </div>
+
 
 <div class="footer">
   <span>© 2025 gnarli</span>
